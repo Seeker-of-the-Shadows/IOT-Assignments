@@ -5,40 +5,39 @@
 
 number=int(input("give a number"))
 
-# a
+
 def face_value(n):
     print("face value of each decimal digit")
-    for a in range(4,0,-1):
-        print(number//int(power10(a)),end=" ")
-# print(number//1000,end=" ")
-# print((number//100)%10,end=" ")
-# print((number//10)%10,end=" ")
-# print(number%10,end=" ")
+    
+    a=4
+    while a>0:
+        print((number//int(power10(a)))%10,end=" ")
+        a-=1
 
+def place_value(n):
+    print("\nplace value of each decimal digit")
+    
+    a=4
+    while a>0:
+        print((number//int(power10(a)))%10*(int(power10(a))),end=" ")
+        a-=1
 
-
-# b
-print("\nplace value of each decimal digit")
-print(number ,end=" = ")
-print((number//1000)*1000,end="+")
-print(((number//100)%10)*100,end="+")
-print(((number//10)%10)*10,end="+")
-print((number%10)*1,end=" ")
-
-# c
-print("\nreverse order")
-print(number%10,end=" ")
-print((number//10)%10,end=" ")
-print((number//100)%10,end=" ")
-print(number//1000,end=" ")
+def rev(n):
+    print("\n reverse order")
+    
+    a=1
+    while a<5:
+        print((number//int(power10(a)))%10,end=" ")
+        a+=1
 
 def power10(n):
     a=1
-    while n>0:
+    while n>1:
         
         a=a*10
         n=n-1
-    print(a)
+    return a
 
 face_value(number)
-
+place_value(number)
+rev(number)
